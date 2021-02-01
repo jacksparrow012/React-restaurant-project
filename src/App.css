@@ -3,7 +3,7 @@
 }
 .card{
   margin: 10px;
-  border: 2px solid black !important;
+
 }
 .heading{
   background-color: rgb(123, 123, 233);
@@ -13,7 +13,8 @@
   cursor: pointer;
 }
 .image{
-       cursor:pointer
+       cursor:pointer;
+       opacity: 0.5;
 }
 .label{
 background-color: rgb(238, 126, 126);
