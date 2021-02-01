@@ -30,6 +30,7 @@ class Menu extends Component {
                     </div>
                     <div className="col-6">
                         {disDetail}
+
                     </div>
                 </div>
 
