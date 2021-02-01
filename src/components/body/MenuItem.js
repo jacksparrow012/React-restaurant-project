@@ -6,6 +6,7 @@ const MenuItem = (props) => {
     //console.log(props);
     return (
         <div>
+
             <Card className="card">
                 <CardBody>
                     <CardTitle className="heading" onClick={() => props.DishSelect(props.dish)}><h2>Name: {props.dish.name}</h2></CardTitle>
