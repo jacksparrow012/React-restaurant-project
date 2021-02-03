@@ -36,4 +36,19 @@ color:white
   width: 60vw;
   margin:  0 auto;
   padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+.footer{
+  background-color: #D1C4E9;
+  margin: 0 auto;
+  padding-top: 10px;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+
+.row-content{
+  margin: 0 auto;
+  padding: 50px 0px 50px 0px;
+  min-height: 400px;
 }

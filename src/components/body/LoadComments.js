@@ -3,7 +3,7 @@ import dateFormat from "dateformat";
 const LoadComments = (props) => {
 
     return (
-        props.comments.map((comment) => {
+        props.comments.map(comment => {
             return (
                 <div key={comment.id}>
                     <h3>Author:{comment.author}</h3>
