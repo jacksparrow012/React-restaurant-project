@@ -10,7 +10,7 @@ class Menu extends Component {
         modalOpen: false
     }
     onDishSelect = dish => {
-        console.log(dish);
+        // console.log(dish);
         this.setState({
             selectedDish: dish,
             modalOpen: !this.state.modalOpen

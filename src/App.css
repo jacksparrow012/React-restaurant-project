@@ -32,3 +32,8 @@ color:white
   width: 50%;
 
 }
+.myForm{
+  width: 60vw;
+  margin:  0 auto;
+  padding-bottom: 20px;
+}
