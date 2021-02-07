@@ -1,120 +1,145 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Input, Label, Button } from "reactstrap"
+import { Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+
 class Contact extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             firstname: "",
             lastname: "",
             telnum: "",
             email: "",
-            agree: true,
-            message: "",
-            contactType: "Tel."
+            agree: false,
+            contactType: 'Tel.',
+            message: ""
         }
-        this.handleInputChange = this.handleInputChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleInputChange = event => {
-        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
-        const name = event.target.name
+        const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        const name = event.target.name;
         this.setState({
             [name]: value
         })
     }
+
     handleSubmit = event => {
         console.log(this.state);
-        event.preventDefault()
+        event.preventDefault();
     }
+
     render() {
-        document.title = "Contact"
+        document.title = "Contact";
         return (
             <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <h2>Send Your Feedback to Us</h2>
-                        <Form className="myForm" onSubmit={this.handleSubmit}>
-                            <Label></Label>
-                            <FormGroup>
-                                <Input type="text"
-                                    name="firstname"
-                                    placeholder="Your First Name"
-                                    value={this.state.firstname}
-                                    onChange={this.handleInputChange}
-                                />
+                <div className="row row-content" style={{ paddingLeft: "20px", textAlign: "left" }}>
+                    <div className="col-12">
+                        <h3>Send us your Feedback</h3>
+                    </div>
+                    <div className="col-12 col-md-7">
+                        <Form onSubmit={this.handleSubmit}>
+                            <FormGroup row>
+                                <Label htmlFor="firstname" md={2}>First Name</Label>
+                                <Col md={10}>
+                                    <Input
+                                        type="text"
+                                        name="firstname"
+                                        placeholder="First Name"
+                                        value={this.state.firstname}
+                                        onChange={this.handleInputChange}
+                                    />
+                                </Col>
                             </FormGroup>
-                            <FormGroup>
-                                <Input type="text"
-                                    name="lastname"
-                                    placeholder="Your Last Name"
-                                    value={this.state.lastname}
-                                    onChange={this.handleInputChange}
-                                />
+                            <FormGroup row>
+                                <Label htmlFor="lastname" md={2}>Last Name</Label>
+                                <Col md={10}>
+                                    <Input
+                                        type="text"
+                                        name="lastname"
+                                        value={this.state.lastname}
+                                        placeholder="Last Name"
+                                        onChange={this.handleInputChange}
+                                    />
+                                </Col>
                             </FormGroup>
-                            <FormGroup>
-                                <Input type="number"
-                                    name="telnum"
-                                    placeholder="Your Contact Number"
-                                    value={this.state.telnum}
-                                    onChange={this.handleInputChange}
-                                />
+                            <FormGroup row>
+                                <Label htmlFor="telnum" md={2}>Contact Tel.</Label>
+                                <Col md={10}>
+                                    <Input
+                                        type="tel"
+                                        name="telnum"
+                                        value={this.state.telnum}
+                                        placeholder="Tel. Number"
+                                        onChange={this.handleInputChange}
+                                    />
+                                </Col>
                             </FormGroup>
-                            <FormGroup>
-                                <Input type="email"
-                                    name="email"
-                                    placeholder="Your Email"
-                                    value={this.state.email}
-                                    onChange={this.handleInputChange}
-                                />
+                            <FormGroup row>
+                                <Label htmlFor="email" md={2}>Email</Label>
+                                <Col md={10}>
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        value={this.state.email}
+                                        placeholder="Email"
+                                        onChange={this.handleInputChange}
+                                    />
+                                </Col>
                             </FormGroup>
-                            <FormGroup>
-                                <div className="row">
-                                    <div className="col-6">
-                                        <h5>Can we contact with you?</h5>
-                                    </div>
-                                    <div className="col-6">
-                                        <Input type="checkbox" name="agree"
-                                            checked={this.state.agree}
-                                            onChange={this.handleInputChange}
-                                        />
-                                    </div>
-                                </div>
+                            <FormGroup row>
+                                <Col md={{ size: 6, offset: 2 }}>
+                                    <FormGroup check>
+                                        <Label check>
+                                            <Input
+                                                type="checkbox"
+                                                name="agree"
+                                                checked={this.state.agree}
+                                                onChange={this.handleInputChange}
+                                            />
+                                            <strong>May we contact you?
+                                            </strong>
+                                        </Label>
+                                    </FormGroup>
+                                </Col>
+                                <Col md={{ size: 3, offset: 1 }}>
+                                    <Input
+                                        type="select"
+                                        name="contactType"
+                                        value={this.state.contactType}
+                                        onChange={this.handleInputChange}
+                                    >
+                                        <option>Tel.</option>
+                                        <option>Email</option>
+                                    </Input>
+                                </Col>
                             </FormGroup>
-                            <FormGroup>
-                                <div className="row">
-                                    <div className="col-6">
-                                        <h4>How we will contact with you?</h4>
-                                    </div>
+                            <FormGroup row>
+                                <Label htmlFor="message" md={2}>Your Feedback</Label>
+                                <Col md={10}>
+                                    <Input
+                                        type="textarea"
+                                        name="message"
+                                        value={this.state.message}
+                                        rows="12"
+                                        onChange={this.handleInputChange}
+                                    >
 
-                                    <div className="col-6">
-                                        <Input type="select" name="contactType"
-                                            onChange={this.handleInputChange}>
-                                            <option>Tel.</option>
-                                            <option>Email</option>
-
-                                        </Input>
-                                    </div>
-                                </div>
+                                    </Input>
+                                </Col>
                             </FormGroup>
-
                             <FormGroup>
-                                <Input type="textarea"
-                                    placeholder="write something about our service"
-                                    name="message"
-                                    value={this.state.message}
-                                    onChange={this.handleInputChange}
-                                ></Input>
+                                <Col md={{ size: 10, offset: 2 }}>
+                                    <Button type="submit" color="primary">
+                                        Send Feedback
+                                    </Button>
+                                </Col>
                             </FormGroup>
-
-                            <FormGroup>
-                                <Button type="submit" className="btn btn-success btn-block btn-lg">Send Feedback</Button>
-                            </FormGroup>
-
                         </Form>
                     </div>
                 </div>
             </div>
-
         );
     }
 }

@@ -1,54 +1,18 @@
 .App {
   text-align: center;
 }
-.card{
-  margin: 10px;
 
-}
-.heading{
-  background-color: rgb(123, 123, 233);
-  color:white;
-  text-align: center;
-  font-family: roboto,sans-serif;
-  cursor: pointer;
-}
-.image{
-       cursor:pointer;
-       opacity: 0.9;
-}
-.label{
-background-color: rgb(238, 126, 126);
-text-align: center;
-font-weight: normal;
-margin-top: 10px;
-color:white
-
-}
-.price{
-  background-color:rgb(41, 28, 28);
-  color:white;
-  text-align: center;
-  border-radius: 2px;
-  width: 50%;
-
-}
-.myForm{
-  width: 60vw;
-  margin:  0 auto;
-  padding-bottom: 20px;
-  margin-bottom: 40px;
-}
-.footer{
+.footer {
   background-color: #D1C4E9;
-  margin: 0 auto;
+  margin: 0px auto;
   padding-top: 10px;
-position: fixed;
-bottom: 0;
-width: 100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-.row-content{
-  margin: 0 auto;
+.row-content {
+  margin: 0px auto;
   padding: 50px 0px 50px 0px;
   min-height: 400px;
 }

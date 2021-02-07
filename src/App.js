@@ -1,10 +1,11 @@
-import MainComponent from './components/MainComponent'
+import React from 'react';
 import './App.css';
-import { BrowserRouter } from "react-router-dom"
+import MainComponent from './components/MainComponent';
+import { BrowserRouter } from 'react-router-dom';
+import myStore from "./redux/store"
 import { Provider } from "react-redux"
-import myStore from "./redux/Store"
 function App() {
-  console.log("From app.js", myStore.getState());
+  // console.log("From app.js", myStore.getState());
   return (
     <div className="App">
       <Provider store={myStore}>
@@ -12,7 +13,6 @@ function App() {
           <MainComponent />
         </BrowserRouter>
       </Provider>
-
     </div>
   );
 }
